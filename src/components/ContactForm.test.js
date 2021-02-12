@@ -23,4 +23,11 @@ test('form can be filled out and submitted', () => {
     const submit = screen.getByRole('button', { name: /submit/i});
 
     userEvent.click(submit);
+
+    expect.objectContaining({
+        'firstName': 'Dar',
+        'lastName': 'von Pingel',
+        'email': 'dvonpingel@gmail.com',
+        'message': 'Hi this is fun!'
+    })
 })
